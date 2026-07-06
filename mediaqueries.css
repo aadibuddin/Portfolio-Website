@@ -15,12 +15,14 @@
     flex-direction: column;
     height: fit-content;
     gap: 2rem;
+    align-items: center;
   }
 
   .section-container,
   .about-details-container,
   .experience-skills-container {
     flex-direction: column;
+    align-items: center;
   }
 
   .projects-container {
