@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abalone Research Database — Query Demo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Poppins", sans-serif;
+    color: rgb(30, 30, 30);
+    background: rgb(250, 250, 250);
+    padding: 3rem 1.5rem 5rem;
+  }
+  .wrap { max-width: 50rem; margin: 0 auto; }
+  a.back {
+    color: rgb(85, 85, 85);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+  a.back:hover { color: black; }
+  h1 { font-size: 2rem; margin: 1rem 0 0.25rem; }
+  .subtitle { color: rgb(85, 85, 85); margin-bottom: 0.5rem; }
+  .meta {
+    color: rgb(85, 85, 85);
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+  }
+  .query-block {
+    border: rgb(163, 163, 163) 0.1rem solid;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: white;
+  }
+  .query-block h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  .query-block p.desc {
+    color: rgb(85, 85, 85);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  pre.sql {
+    background: rgb(43, 43, 43);
+    color: rgb(220, 220, 220);
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  pre.sql .kw { color: rgb(255, 121, 198); }
+  pre.sql .fn { color: rgb(139, 233, 253); }
+  pre.sql .str { color: rgb(241, 250, 140); }
+
+  button.run-btn {
+    margin-top: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    background: rgb(53, 53, 53);
+    color: white;
+    cursor: pointer;
+    transition: all 200ms ease;
+  }
+  button.run-btn:hover { background: black; }
+  button.run-btn.shown { background: white; color: rgb(53,53,53); }
+
+  .result-wrap {
+    margin-top: 1.25rem;
+    display: none;
+    overflow-x: auto;
+  }
+  .result-wrap.visible { display: block; }
+  table.result {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+  table.result th, table.result td {
+    border: 1px solid rgb(225, 225, 225);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    white-space: nowrap;
+  }
+  table.result th {
+    background: rgb(53, 53, 53);
+    color: white;
+    font-weight: 600;
+  }
+  table.result tr:nth-child(even) td {
+    background: rgb(248, 248, 248);
+  }
+  .row-count {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: rgb(150, 150, 150);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../../index.html#projects">&larr; Back to portfolio</a>
+    <h1>Abalone Research Database</h1>
+    <p class="subtitle">MySQL database built for an abalone diversity &amp; biological statistics research study</p>
+    <p class="meta">1,000+ imported records &middot; queries below run against the real dataset used in the project. Click "Run Query" to see the actual result set.</p>
+
+    <div class="query-block">
+      <h3>Average shell weight by collection region</h3>
+      <p class="desc">Surfaces which coastal regions produced heavier-shelled abalone on average.</p>
+      <pre class="sql"><span class="kw">SELECT</span> Water_region,
+       <span class="fn">ROUND</span>(<span class="fn">AVG</span>(Shell_weight), 4) <span class="kw">AS</span> avg_shell_weight,
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> total
+<span class="kw">FROM</span> abalone_data
+<span class="kw">GROUP BY</span> Water_region
+<span class="kw">ORDER BY</span> avg_shell_weight <span class="kw">DESC</span>
+<span class="kw">LIMIT</span> 5;</pre>
+      <button class="run-btn" onclick="toggleResult(this, 'r1')">Run Query &#9654;</button>
+      <div class="result-wrap" id="r1">
+        <table class="result">
+          <thead><tr><th>Water_region</th><th>avg_shell_weight</th><th>total</th></tr></thead>
+          <tbody>
+            <tr><td>Mid-Atlantic</td><td>0.2640</td><td>82</td></tr>
+            <tr><td>Florida Gulf Coast</td><td>0.2502</td><td>98</td></tr>
+            <tr><td>Southeast</td><td>0.2432</td><td>107</td></tr>
+            <tr><td>Northeast</td><td>0.2393</td><td>113</td></tr>
+            <tr><td>Pacific</td><td>0.2354</td><td>82</td></tr>
+          </tbody>
+        </table>
+        <p class="row-count">5 rows returned</p>
+      </div>
+    </div>
+
+    <div class="query-block">
+      <h3>Records collected per organization</h3>
+      <p class="desc">Identifies which research organizations contributed the most records to the study.</p>
+      <pre class="sql"><span class="kw">SELECT</span> Collector_organization,
+       <span class="fn">COUNT</span>(*) <span class="kw">AS</span> records_collected
+<span class="kw">FROM</span> abalone_data
+<span class="kw">GROUP BY</span> Collector_organization
+<span class="kw">ORDER BY</span> records_collected <span class="kw">DESC</span>
+<span class="kw">LIMIT</span> 5;</pre>
+      <button class="run-btn" onclick="toggleResult(this, 'r2')">Run Query &#9654;</button>
+      <div class="result-wrap" id="r2">
+        <table class="result">
+          <thead><tr><th>Collector_organization</th><th>records_collected</th></tr></thead>
+          <tbody>
+            <tr><td>University of Houston</td><td>361</td></tr>
+            <tr><td>University of Florida</td><td>75</td></tr>
+            <tr><td>San Diego State University</td><td>70</td></tr>
+            <tr><td>Prince William Sound Science Center</td><td>67</td></tr>
+            <tr><td>Florida Atlantic University</td><td>66</td></tr>
+          </tbody>
+        </table>
+        <p class="row-count">5 rows returned</p>
+      </div>
+    </div>
+
+    <div class="query-block">
+      <h3>Top 5 heaviest abalone specimens</h3>
+      <p class="desc">A quick outlier check pulling the heaviest recorded specimens across the entire dataset.</p>
+      <pre class="sql"><span class="kw">SELECT</span> Abalone_id, Gender, Whole_weight, Rings, Collector_organization
+<span class="kw">FROM</span> abalone_data
+<span class="kw">ORDER BY</span> Whole_weight <span class="kw">DESC</span>
+<span class="kw">LIMIT</span> 5;</pre>
+      <button class="run-btn" onclick="toggleResult(this, 'r3')">Run Query &#9654;</button>
+      <div class="result-wrap" id="r3">
+        <table class="result">
+          <thead><tr><th>Abalone_id</th><th>Gender</th><th>Whole_weight</th><th>Rings</th><th>Collector_organization</th></tr></thead>
+          <tbody>
+            <tr><td>3008</td><td>M</td><td>2.2305</td><td>14</td><td>University of Houston</td></tr>
+            <tr><td>1049</td><td>M</td><td>2.1980</td><td>11</td><td>Stanford University</td></tr>
+            <tr><td>1986</td><td>M</td><td>2.1730</td><td>13</td><td>NOAA Fisheries</td></tr>
+            <tr><td>356</td><td>M</td><td>2.1300</td><td>20</td><td>University of Houston</td></tr>
+            <tr><td>1755</td><td>M</td><td>2.1250</td><td>13</td><td>Florida Atlantic University</td></tr>
+          </tbody>
+        </table>
+        <p class="row-count">5 rows returned</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleResult(btn, id) {
+      const el = document.getElementById(id);
+      const opening = !el.classList.contains('visible');
+      el.classList.toggle('visible', opening);
+      btn.classList.toggle('shown', opening);
+      btn.innerHTML = opening ? 'Hide Results &#9660;' : 'Run Query &#9654;';
+    }
+  </script>
+</body>
+</html>

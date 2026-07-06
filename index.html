@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aadib's Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+  <nav id="desktop-nav">
+    <div class="logo">Aadib Uddin</div> <!-- will put profile picture here-->
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="hamburger-nav">
+    <div class="logo">Aadib Uddin</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()"><span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+   <section id="profile">
+    <div class="section__pic-container">
+      <img src="./assets/1771486126122.jpeg" alt="Aadib Uddin Profile Picture" class="dib">
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello I'm</p>
+      <h1 class="title">Aadib Uddin </h1>
+      <p class="section__text__p2">Data/Business Analyst</p>
+      <div class="btn-container">
+        <button 
+        class="btn btn-color-2" 
+        onclick="window.open('./assets/Aadib Uddin Resume.pdf')"> Download CV
+        </button>
+        <button 
+        class="btn btn-color-1" 
+        onclick="location.href='./#contact'"> Contact Info
+        </button>
+      </div>
+      <div id="socials-container">
+        <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/aadibuddin/'">
+        <img src="./assets/github.png" alt="My GitHub Profile" class="icon" onclick="location.href='https://github.com/aadibuddin'">
+      </div>
+    </div>
+   </section>
+   <section id="about">
+     <p class="section__text__p1">Get To Know More</p>
+     <h1 class="title">About Me</h1>
+     <div class="section-container">
+       <div class="section__pic-container">
+         <img src="./assets/1707362346487.jpeg" alt="Profile Picture" class="about-pic">
+       </div>
+       <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <img src="./assets/experience.png" alt="Experience icon" class="icon">
+            <h3>Experience</h3>
+            <p>Data Analytics Intern<br />Global Experienced Specialists (GES)</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/education.png" alt="Education icon" class="icon">
+            <h3>Education</h3>
+            <p>B.Sc. Computer Information Systems<br />University of Houston</p>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>Hello there!
+
+            My name is Aadib Uddin and I’m a Computer Information Systems graduate from the University of Houston who specializes in turning complex data into actionable business insights. Through my experience as a Data Analytics Intern at GES, I’ve worked with large datasets, built dashboards, and automated processes to improve accuracy and decision-making for stakeholders.
+
+            I enjoy solving messy business problems with clean data, strong SQL, and clear visualizations.
+
+            Currently seeking Full-Time Data Analyst or Business Analyst opportunities starting May 2026</p>
+        </div>
+       </div>
+     </div>
+     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
+   </section>
+   <section id="experience">
+     <p class="section__text__p1">Explore My</p>
+     <h1 class="title">Experience</h1>
+     <div class="experience-job">
+       <div class="experience-job-header">
+         <h3>Data Analytics Intern</h3>
+         <span class="experience-job-org">Global Experienced Specialists (GES)</span>
+         <span class="experience-job-dates">June 2025 – October 2025</span>
+       </div>
+       <ul class="experience-job-list">
+         <li>Identified and removed duplicate client records using advanced SQL queries and presented findings through data visualizations and dashboards, resulting in cleaner datasets and more accurate reporting for senior leadership.</li>
+         <li>Designed integration architecture diagrams mapping company data flows between 50+ internal systems and external platforms, improving visibility into system dependencies and cross-platform data movement.</li>
+         <li>Monitored Azure Logic App integrations, diagnosed file transfer issues, and proposed structured solutions, resulting in improved automation reliability and reduced risk of incomplete data ingestion.</li>
+         <li>Constructed a Twitter API pipeline using Python that runs on the cloud and collects and stores 100+ external records each time to support scalable and analytics-ready data ingestion.</li>
+       </ul>
+     </div>
+     <div class="about-containers experience-skills-container">
+       <div class="details-container">
+         <h3>Technical Skills</h3>
+         <div class="skills-list">
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Python</div>
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">SQL</div>
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Power BI</div>
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Tableau</div>
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Microsoft Excel</div>
+         </div>
+       </div>
+       <div class="details-container">
+         <h3>Tools &amp; Platforms</h3>
+         <div class="skills-list">
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">HTML/CSS/JavaScript</div>
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Node.js</div>
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Microsoft PowerPoint</div>
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Microsoft Word</div>
+           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Microsoft Visio</div>
+         </div>
+       </div>
+     </div>
+     <p class="experience-certifications"><strong>Certifications:</strong> Meta Data Analyst Professional, Azure Fundamentals (AZ-900)</p>
+     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'">
+   </section>
+   <section id="projects">
+     <p class="section__text__p1">Browse My Recent</p>
+     <h1 class="title">Projects</h1>
+     <div class="projects-container">
+       <div class="details-container project-card">
+         <img src="./assets/project-road-accident-dashboard.png" alt="Road Accident Analytics Dashboard Screenshot" class="project-img">
+         <h3 class="project-title">Road Accident Analytics Dashboard</h3>
+         <p>Analyzed 600K+ accident records in Tableau, building a dynamic dashboard with parameters, calculated fields, and interactive filters to track KPIs and drill into trends across casualties, vehicle types, and road conditions.</p>
+         <div class="btn-container">
+           <button class="btn btn-color-2 project-btn" onclick="window.open('https://public.tableau.com/app/profile/aadib.uddin/viz/RoadAccidentDashboard_17833073909630/Dashboard1')">Live Demo</button>
+         </div>
+       </div>
+       <div class="details-container project-card">
+         <img src="./assets/project-abalone-sql.png" alt="Abalone Research Database Screenshot" class="project-img">
+         <h3 class="project-title">Abalone Research Database</h3>
+         <p>Led the creation of a MySQL database system for an abalone diversity and biological statistics research study, importing large CSV datasets and writing SQL queries to extract research insights.</p>
+         <div class="btn-container">
+           <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/demos/abalone-sql-demo.html')">Preview</button>
+         </div>
+       </div>
+       <div class="details-container project-card">
+         <img src="./assets/project-abalone-excel.png" alt="Abalone Data Analysis in Excel Screenshot" class="project-img">
+         <h3 class="project-title">Abalone Data Analysis in Excel</h3>
+         <p>Built an Excel application to categorize, value, and analyze abalone data, applying complex categorization rules across 20+ biological characteristics and conducting statistical analysis to surface trends.</p>
+         <div class="btn-container">
+           <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/demos/abalone-excel-demo.html')">Preview</button>
+         </div>
+       </div>
+     </div>
+     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'">
+   </section>
+   <section id="contact">
+     <p class="section__text__p1">Get In Touch</p>
+     <h1 class="title">Contact Me</h1>
+     <div class="contact-info-upper-container">
+       <div class="contact-info-container">
+         <img src="./assets/email.png" alt="Email icon" class="icon contact-icon">
+         <p><a href="mailto:aadib.uddin@gmail.com">aadib.uddin@gmail.com</a></p>
+       </div>
+       <div class="contact-info-container">
+         <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
+         <p><a href="https://www.linkedin.com/in/aadibuddin/" target="_blank">LinkedIn</a></p>
+       </div>
+     </div>
+   </section>
+   <footer>
+     <nav>
+       <ul class="nav-links">
+         <li><a href="#about">About</a></li>
+         <li><a href="#experience">Experience</a></li>
+         <li><a href="#projects">Projects</a></li>
+         <li><a href="#contact">Contact</a></li>
+       </ul>
+     </nav>
+     <p>Copyright &#169; 2026 Aadib Uddin. All Rights Reserved</p>
+   </footer>
+  <script src="script.js"></script>
+</body>
+</html>                                                                                                                                                                                                                                                          
