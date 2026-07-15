@@ -44,6 +44,30 @@ nav {
   font-size: 1.5rem;
 }
 
+.nav-links a {
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 0.125rem;
+  background-color: rgb(181, 181, 181);
+  transition: width 250ms ease;
+}
+
+.nav-links a:hover {
+  text-decoration: none;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -508,5 +532,75 @@ footer nav {
 footer .nav-links {
   font-size: 1.25rem;
   margin-bottom: 1rem;
+}
+
+/* SCROLL REVEAL ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(2.5rem);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.about-containers .reveal:nth-child(2),
+.experience-skills-container .reveal:nth-child(2) {
+  transition-delay: 120ms;
+}
+
+.projects-container .reveal:nth-child(2) {
+  transition-delay: 120ms;
+}
+
+.projects-container .reveal:nth-child(3) {
+  transition-delay: 240ms;
+}
+
+.experience-job + .experience-job {
+  transition-delay: 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* HOVER POLISH */
+
+.details-container {
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.details-container:hover {
+  transform: translateY(-0.4rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+.btn:hover {
+  transform: scale(1.04);
+}
+
+#socials-container .icon,
+.contact-icon {
+  transition: transform 200ms ease;
+}
+
+#socials-container .icon:hover {
+  transform: scale(1.15);
+}
+
+.arrow {
+  transition: transform 200ms ease;
+}
+
+.arrow:hover {
+  transform: translateY(0.3rem);
 }
 
