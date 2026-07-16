@@ -4,203 +4,293 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aadib's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mediaqueries.css">
 </head>
 <body>
-  <nav id="desktop-nav">
-    <div class="logo">Aadib Uddin</div> <!-- will put profile picture here-->
-    <div>
+  <header>
+    <a class="nav-brand" href="#profile">AU</a>
+    <nav>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
-  </nav>
-  <nav id="hamburger-nav">
-    <div class="logo">Aadib Uddin</div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()"><span></span>
-        <span></span>
-        <span></span>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </header>
+
+  <section id="profile" class="reveal">
+    <div class="section-ghost" aria-hidden="true">AU</div>
+    <div class="hero">
+      <div class="section__pic-container">
+        <img src="./assets/1771486126122.jpeg" alt="Aadib Uddin Profile Picture" class="dib">
       </div>
-      <div class="menu-links">
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      <div class="section__text">
+        <p class="eyebrow">Houston, TX &middot; University of Houston</p>
+        <h1 class="title">Aadib Uddin</h1>
+        <p class="section__text__p2">Data/Business Analyst</p>
+        <p class="intro">I turn messy, disconnected data into dashboards and decisions people can actually act on.</p>
+        <div class="chip-row">
+          <span class="chip">SQL</span>
+          <span class="chip">Data Visualization</span>
+          <span class="chip">Automation</span>
+          <span class="chip">Dashboards</span>
+        </div>
+        <div class="btn-container">
+          <button
+          class="btn btn-color-2"
+          onclick="window.open('./assets/Aadib Uddin Resume.pdf')"> Download CV
+          </button>
+          <button
+          class="btn btn-color-1"
+          onclick="location.href='./#contact'"> Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/aadibuddin/'">
+          <img src="./assets/github.png" alt="My GitHub Profile" class="icon" onclick="location.href='https://github.com/aadibuddin'">
+        </div>
       </div>
     </div>
-  </nav>
-   <section id="profile" class="reveal">
-    <div class="section__pic-container">
-      <img src="./assets/1771486126122.jpeg" alt="Aadib Uddin Profile Picture" class="dib">
-    </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello I'm</p>
-      <h1 class="title">Aadib Uddin </h1>
-      <p class="section__text__p2">Data/Business Analyst</p>
-      <div class="btn-container">
-        <button 
-        class="btn btn-color-2" 
-        onclick="window.open('./assets/Aadib Uddin Resume.pdf')"> Download CV
-        </button>
-        <button 
-        class="btn btn-color-1" 
-        onclick="location.href='./#contact'"> Contact Info
-        </button>
-      </div>
-      <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="My LinkedIn Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/aadibuddin/'">
-        <img src="./assets/github.png" alt="My GitHub Profile" class="icon" onclick="location.href='https://github.com/aadibuddin'">
-      </div>
-    </div>
-   </section>
-   <section id="about" class="reveal">
-     <p class="section__text__p1">Get To Know More</p>
-     <h1 class="title">About Me</h1>
-     <div class="section-container">
-       <div class="section__pic-container">
-         <img src="./assets/1707362346487.jpeg" alt="Profile Picture" class="about-pic">
-       </div>
-       <div class="about-details-container">
-        <div class="about-containers">
-          <div class="details-container reveal">
-            <img src="./assets/experience.png" alt="Experience icon" class="icon">
-            <h3>Experience</h3>
-            <p>Data Analytics Intern<br />Global Experienced Specialists (GES)</p>
+  </section>
+
+  <section id="about" class="reveal">
+    <p class="eyebrow eyebrow--center">Who Am I</p>
+    <h1 class="title">About Me</h1>
+    <div class="section-container">
+      <div class="about-copy">
+        <p class="lede">I've learned that the clearest insight only matters if someone can trust the data behind it.</p>
+        <div class="stat-strip">
+          <div class="stat reveal">
+            <span class="stat-value">Data Analytics Intern</span>
+            <span class="stat-label">Global Experienced Specialists (GES)</span>
           </div>
-          <div class="details-container reveal">
-            <img src="./assets/education.png" alt="Education icon" class="icon">
-            <h3>Education</h3>
-            <p>B.Sc. Computer Information Systems<br />University of Houston</p>
+          <div class="stat reveal">
+            <span class="stat-value">B.Sc. Computer Information Systems</span>
+            <span class="stat-label">University of Houston</span>
           </div>
         </div>
-        <div class="text-container">
-          <p>Hello there!
+        <p class="about-closing">My name is Aadib Uddin and I'm a Computer Information Systems graduate from the University of Houston who specializes in turning complex data into actionable business insights. Through my experience as a Data Analytics Intern at GES, I've worked with large datasets, built dashboards, and automated processes to improve accuracy and decision-making for stakeholders. I enjoy solving messy business problems with clean data, strong SQL, and clear visualizations. Currently seeking Full-Time opportunities starting May 2026.</p>
+      </div>
+      <figure class="about-media reveal">
+        <img src="./assets/1707362346487.jpeg" alt="Profile Picture" class="about-pic">
+      </figure>
+    </div>
+  </section>
 
-            My name is Aadib Uddin and I’m a Computer Information Systems graduate from the University of Houston who specializes in turning complex data into actionable business insights. Through my experience as a Data Analytics Intern at GES, I’ve worked with large datasets, built dashboards, and automated processes to improve accuracy and decision-making for stakeholders.
+  <section id="experience" class="reveal">
+    <div class="section-ghost" aria-hidden="true">WORK</div>
+    <p class="eyebrow eyebrow--center">Explore My</p>
+    <h1 class="title">Experience</h1>
 
-            I enjoy solving messy business problems with clean data, strong SQL, and clear visualizations.
-
-            Currently seeking Full-Time opportunities starting May 2026</p>
+    <div class="experiences-list">
+      <article class="experience-row reveal">
+        <div class="experience-meta">
+          <span class="experience-date">June 2025 &ndash; October 2025</span>
         </div>
-       </div>
-     </div>
-     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
-   </section>
-   <section id="experience" class="reveal">
-     <p class="section__text__p1">Explore My</p>
-     <h1 class="title">Experience</h1>
-     <div class="experience-job reveal">
-       <div class="experience-job-header">
-         <h3>Data Analytics Intern</h3>
-         <span class="experience-job-org">Global Experienced Specialists (GES)</span>
-         <span class="experience-job-dates">June 2025 – October 2025</span>
-       </div>
-       <ul class="experience-job-list">
-         <li>Identified and removed duplicate client records using advanced SQL queries and presented findings through data visualizations and dashboards, resulting in cleaner datasets and more accurate reporting for senior leadership.</li>
-         <li>Designed integration architecture diagrams mapping company data flows between 50+ internal systems and external platforms, improving visibility into system dependencies and cross-platform data movement.</li>
-         <li>Monitored Azure Logic App integrations, diagnosed file transfer issues, and proposed structured solutions, resulting in improved automation reliability and reduced risk of incomplete data ingestion.</li>
-         <li>Constructed a Twitter API pipeline using Python that runs on the cloud and collects and stores 100+ external records each time to support scalable and analytics-ready data ingestion.</li>
-       </ul>
-     </div>
-     <div class="experience-job reveal">
-       <div class="experience-job-header">
-         <h3>Front Desk Staff</h3>
-         <span class="experience-job-org">School of Science and Technology (SST) &middot; Sugar Land, Texas</span>
-         <span class="experience-job-dates">October 2019 – June 2023</span>
-       </div>
-       <ul class="experience-job-list">
-         <li>Provided front-line technical and administrative support via phone, resolving parent inquiries accurately and efficiently while maintaining a high standard of customer service.</li>
-         <li>Built and maintained Excel spreadsheets to track and manage administrative data for after-school programs, improving organization and data accuracy for club logistics.</li>
-         <li>Processed and reconciled financial transactions for parent payments, ensuring accurate record-keeping and data entry.</li>
-       </ul>
-     </div>
-     <div class="about-containers experience-skills-container">
-       <div class="details-container reveal">
-         <h3>Technical Skills</h3>
-         <div class="skills-list">
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Python</div>
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">SQL</div>
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Power BI</div>
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Tableau</div>
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Microsoft Excel</div>
-         </div>
-       </div>
-       <div class="details-container reveal">
-         <h3>Tools &amp; Platforms</h3>
-         <div class="skills-list">
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">HTML/CSS/JavaScript</div>
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Node.js</div>
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Microsoft PowerPoint</div>
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Microsoft Word</div>
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Microsoft Visio</div>
-           <div class="skill"><img src="./assets/checkmark.png" alt="Checkmark" class="checkmark">Claude 101</div>
-         </div>
-       </div>
-     </div>
-     <p class="experience-certifications"><strong>Certifications:</strong> Meta Data Analyst Professional, Azure Fundamentals (AZ-900)</p>
-     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'">
-   </section>
-   <section id="projects" class="reveal">
-     <p class="section__text__p1">Browse My Recent</p>
-     <h1 class="title">Projects</h1>
-     <div class="projects-container">
-       <div class="details-container project-card reveal">
-         <img src="./assets/project-road-accident-dashboard.png" alt="Road Accident Analytics Dashboard Screenshot" class="project-img">
-         <h3 class="project-title">Road Accident Analytics Dashboard</h3>
-         <p>Analyzed 600K+ accident records in Tableau, building a dynamic dashboard with parameters, calculated fields, and interactive filters to track KPIs and drill into trends across casualties, vehicle types, and road conditions.</p>
-         <div class="btn-container">
-           <button class="btn btn-color-2 project-btn" onclick="window.open('https://public.tableau.com/app/profile/aadib.uddin/viz/RoadAccidentDashboard_17833073909630/Dashboard1')">Live Demo</button>
-         </div>
-       </div>
-       <div class="details-container project-card reveal">
-         <img src="./assets/project-abalone-sql.png" alt="Abalone Research Database Screenshot" class="project-img">
-         <h3 class="project-title">Abalone Research Database</h3>
-         <p>Led the creation of a MySQL database system for an abalone diversity and biological statistics research study, importing large CSV datasets and writing SQL queries to extract research insights.</p>
-         <div class="btn-container">
-           <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/demos/abalone-sql-demo.html')">Preview</button>
-         </div>
-       </div>
-       <div class="details-container project-card reveal">
-         <img src="./assets/project-abalone-excel.png" alt="Abalone Data Analysis in Excel Screenshot" class="project-img">
-         <h3 class="project-title">Abalone Data Analysis in Excel</h3>
-         <p>Built an Excel application to categorize, value, and analyze abalone data, applying complex categorization rules across 20+ biological characteristics and conducting statistical analysis to surface trends.</p>
-         <div class="btn-container">
-           <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/demos/abalone-excel-demo.html')">Preview</button>
-         </div>
-       </div>
-     </div>
-     <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'">
-   </section>
-   <section id="contact" class="reveal">
-     <p class="section__text__p1">Get In Touch</p>
-     <h1 class="title">Contact Me</h1>
-     <div class="contact-info-upper-container reveal">
-       <div class="contact-info-container">
-         <img src="./assets/email.png" alt="Email icon" class="icon contact-icon">
-         <p><a href="mailto:aadib.uddin@gmail.com">aadib.uddin@gmail.com</a></p>
-       </div>
-       <div class="contact-info-container">
-         <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
-         <p><a href="https://www.linkedin.com/in/aadibuddin/" target="_blank">LinkedIn</a></p>
-       </div>
-     </div>
-   </section>
-   <footer class="reveal">
-     <nav>
-       <ul class="nav-links">
-         <li><a href="#about">About</a></li>
-         <li><a href="#experience">Experience</a></li>
-         <li><a href="#projects">Projects</a></li>
-         <li><a href="#contact">Contact</a></li>
-       </ul>
-     </nav>
-     <p>Copyright &#169; 2026 Aadib Uddin. All Rights Reserved</p>
-   </footer>
+        <div class="experience-heading">
+          <img src="./assets/logo-ges.png" alt="Global Experienced Specialists (GES) logo" class="experience-logo">
+          <h3 class="experience-role">Data Analytics Intern <span class="experience-org">&middot; Global Experienced Specialists (GES)</span></h3>
+        </div>
+        <p class="lede">At GES, the job was less about running queries and more about making messy operational data trustworthy enough for leadership to act on.</p>
+        <div class="blurb-grid">
+          <div class="blurb">
+            <span class="blurb-label">Data Cleanup</span>
+            <p class="blurb-body">Identified and removed duplicate client records with advanced SQL, tightening the datasets senior leadership reported from.</p>
+          </div>
+          <div class="blurb">
+            <span class="blurb-label">Systems Mapping</span>
+            <p class="blurb-body">Designed integration architecture diagrams across 50+ internal and external systems to expose hidden data dependencies.</p>
+          </div>
+          <div class="blurb">
+            <span class="blurb-label">Automation</span>
+            <p class="blurb-body">Built a cloud-run Twitter API pipeline in Python, collecting 100+ records per run for analytics-ready ingestion.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="experience-row reveal">
+        <div class="experience-meta">
+          <span class="experience-date">October 2019 &ndash; June 2023</span>
+          <span class="experience-location">Sugar Land, TX</span>
+        </div>
+        <div class="experience-heading">
+          <img src="./assets/logo-sst.png" alt="School of Science and Technology (SST) logo" class="experience-logo">
+          <h3 class="experience-role">Front Desk Staff <span class="experience-org">&middot; School of Science and Technology (SST)</span></h3>
+        </div>
+        <p class="lede">Long before analytics, this was where I learned that good insight starts with good record-keeping.</p>
+        <div class="blurb-grid">
+          <div class="blurb">
+            <span class="blurb-label">Customer Support</span>
+            <p class="blurb-body">Resolved parent inquiries by phone, balancing accuracy with a high standard of service.</p>
+          </div>
+          <div class="blurb">
+            <span class="blurb-label">Excel Tracking</span>
+            <p class="blurb-body">Built and maintained spreadsheets to manage after-school program logistics and data accuracy.</p>
+          </div>
+          <div class="blurb">
+            <span class="blurb-label">Financial Records</span>
+            <p class="blurb-body">Processed and reconciled parent payments, keeping records precise down to the transaction.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="skills-interests">
+      <div class="si-column reveal">
+        <h2 class="skills-heading">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill">
+            <i class="devicon-python-plain"></i>
+            <p class="skill-name">Python</p>
+            <p class="skill-type">Language</p>
+          </div>
+          <div class="skill">
+            <i class="devicon-mysql-plain"></i>
+            <p class="skill-name">SQL</p>
+            <p class="skill-type">Database</p>
+          </div>
+          <div class="skill">
+            <i class="fa-solid fa-chart-column"></i>
+            <p class="skill-name">Power BI</p>
+            <p class="skill-type">BI Tool</p>
+          </div>
+          <div class="skill">
+            <i class="fa-solid fa-chart-pie"></i>
+            <p class="skill-name">Tableau</p>
+            <p class="skill-type">BI Tool</p>
+          </div>
+          <div class="skill">
+            <i class="fa-solid fa-file-excel"></i>
+            <p class="skill-name">Excel</p>
+            <p class="skill-type">Spreadsheet</p>
+          </div>
+          <div class="skill">
+            <i class="devicon-javascript-plain"></i>
+            <p class="skill-name">JavaScript</p>
+            <p class="skill-type">Language</p>
+          </div>
+          <div class="skill">
+            <i class="devicon-html5-plain"></i>
+            <p class="skill-name">HTML</p>
+            <p class="skill-type">Markup</p>
+          </div>
+          <div class="skill">
+            <i class="devicon-css3-plain"></i>
+            <p class="skill-name">CSS</p>
+            <p class="skill-type">Styling</p>
+          </div>
+          <div class="skill">
+            <i class="devicon-nodejs-plain"></i>
+            <p class="skill-name">Node.js</p>
+            <p class="skill-type">Runtime</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="si-column reveal">
+        <h2 class="skills-heading">Tools</h2>
+        <div class="skills-grid">
+          <div class="skill">
+            <i class="fa-solid fa-file-powerpoint"></i>
+            <p class="skill-name">PowerPoint</p>
+            <p class="skill-type">Presentation</p>
+          </div>
+          <div class="skill">
+            <i class="fa-solid fa-file-word"></i>
+            <p class="skill-name">Word</p>
+            <p class="skill-type">Documentation</p>
+          </div>
+          <div class="skill">
+            <i class="fa-solid fa-diagram-project"></i>
+            <p class="skill-name">Visio</p>
+            <p class="skill-type">Diagramming</p>
+          </div>
+          <div class="skill">
+            <i class="fa-solid fa-robot"></i>
+            <p class="skill-name">Claude 101</p>
+            <p class="skill-type">AI Tooling</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="experience-certifications"><strong>Certifications:</strong> Meta Data Analyst Professional, Azure Fundamentals (AZ-900)</p>
+    <p class="experience-certifications"><strong>Involvement:</strong> Future Information Technology Professionals, Management Information Systems Student Organization &middot; Dean's List (Spring 2023, Fall 2023, Spring 2024, Fall 2024)</p>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="section-ghost" aria-hidden="true">WORK</div>
+    <p class="eyebrow eyebrow--center">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="projects-container">
+      <div class="details-container project-card reveal">
+        <img src="./assets/project-road-accident-dashboard.png" alt="Road Accident Analytics Dashboard Screenshot" class="project-img">
+        <h3 class="project-title">Road Accident Analytics Dashboard</h3>
+        <p>Analyzed 600K+ accident records in Tableau, building a dynamic dashboard with parameters, calculated fields, and interactive filters to track KPIs and drill into trends across casualties, vehicle types, and road conditions.</p>
+        <div class="btn-container">
+          <button class="btn btn-color-2 project-btn" onclick="window.open('https://public.tableau.com/app/profile/aadib.uddin/viz/RoadAccidentDashboard_17833073909630/Dashboard1')">Live Demo</button>
+        </div>
+      </div>
+      <div class="details-container project-card reveal">
+        <img src="./assets/project-abalone-sql.png" alt="Abalone Research Database Screenshot" class="project-img">
+        <h3 class="project-title">Abalone Research Database</h3>
+        <p>Led the creation of a MySQL database system for an abalone diversity and biological statistics research study, importing large CSV datasets and writing SQL queries to extract research insights.</p>
+        <div class="btn-container">
+          <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/demos/abalone-sql-demo.html')">Preview</button>
+        </div>
+      </div>
+      <div class="details-container project-card reveal">
+        <img src="./assets/project-abalone-excel.png" alt="Abalone Data Analysis in Excel Screenshot" class="project-img">
+        <h3 class="project-title">Abalone Data Analysis in Excel</h3>
+        <p>Built an Excel application to categorize, value, and analyze abalone data, applying complex categorization rules across 20+ biological characteristics and conducting statistical analysis to surface trends.</p>
+        <div class="btn-container">
+          <button class="btn btn-color-2 project-btn" onclick="window.open('./assets/demos/abalone-excel-demo.html')">Preview</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <p class="eyebrow eyebrow--center">Get In Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container reveal">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon">
+        <button type="button" class="copy-email-btn" data-email="aadib.uddin@gmail.com">
+          <span class="copy-email-text">aadib.uddin@gmail.com</span>
+          <span class="copy-email-feedback">Copied!</span>
+        </button>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
+        <p><a href="https://www.linkedin.com/in/aadibuddin/" target="_blank">LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="reveal">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p>Copyright &#169; 2026 Aadib Uddin. All Rights Reserved</p>
+  </footer>
   <script src="script.js"></script>
 </body>
-</html>                                                                                                                                                                                                                                                          
+</html>
